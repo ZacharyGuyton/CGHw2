@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\zacha\Desktop\Summer Classes 2026\CGHw2\main.cpp(190,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\zacha\Desktop\Summer Classes 2026\CGHw2\main.cpp(191,15): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\zacha\Desktop\Summer Classes 2026\CGHw2\main.cpp(218,32): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  COSC4370_HW2.vcxproj -> C:\Users\zacha\Desktop\Summer Classes 2026\CGHw2\Win\COSC4370_HW2\x64\Debug\COSC4370_HW2.exe

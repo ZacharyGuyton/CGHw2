@@ -46,19 +46,113 @@ float specular[] = { 1.0, 1.0, 1.0, 1.0 };
 float shininess[] = { 50.0 };
 
 void problem1() {
-    // TODO: Your code here!
+    for (int i = 0; i < 8; i++) {
+        glPushMatrix();
+
+        glRotatef(i * 45.0f, 0.0f, 0.0f, 1.0f);
+
+        if (i % 2 == 0)
+            glTranslatef(1.0f, 0.0f, 0.0f);
+        else
+            glTranslatef(0.75f, 0.0f, 0.0f);
+
+        glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+
+        glutSolidTeapot(0.10);
+
+        glPopMatrix();
+    }
 }
 
 void problem2() {
-    // TODO: Your code here!
+    for (int i = 0; i < 11; i++) {
+        glPushMatrix();
+
+        float size = 2.5f - i * 0.23f;
+
+        glTranslatef(0.0f, i * 0.15f, 0.0f);
+        glScalef(size, 0.15f, size);
+
+        glutSolidCube(1.0);
+
+        glPopMatrix();
+    }
 }
 
 void problem3() {
-    // TODO: Your code here!
+    for (int i = 0; i < 6; i++) {
+        int count = 6 - i;
+
+        for (int j = 0; j < count; j++) {
+            glPushMatrix();
+
+            float x = (j - (count - 1) / 2.0f) * 0.37f;
+            float y = 0.85f - i * 0.3f;
+
+            glTranslatef(x, y, 0.0f);
+
+            glutSolidTeapot(0.12);
+
+            glPopMatrix();
+        }
+    }
 }
 
 void problem4() {
-    // TODO: Your code here!
+    glPushMatrix();
+
+    // Move the entire scene slightly upward
+    glTranslatef(0.0f, 0.2f, 0.0f);
+
+    // Heart
+    glPushMatrix();
+
+    glTranslatef(0.0f, 0.3f, 0.0f);
+    glScalef(0.7f, 0.7f, 0.7f);
+
+    glBegin(GL_TRIANGLE_FAN);
+
+    glNormal3f(0.0f, 0.0f, 1.0f);
+
+    glVertex3f(0.0f, 0.2f, 0.0f);
+
+    glVertex3f(0.0f, 0.7f, 0.0f);
+    glVertex3f(-0.3f, 0.9f, 0.0f);
+    glVertex3f(-0.7f, 0.8f, 0.0f);
+    glVertex3f(-0.9f, 0.4f, 0.0f);
+    glVertex3f(-0.8f, 0.0f, 0.0f);
+    glVertex3f(0.0f, -0.9f, 0.0f);
+    glVertex3f(0.8f, 0.0f, 0.0f);
+    glVertex3f(0.9f, 0.4f, 0.0f);
+    glVertex3f(0.7f, 0.8f, 0.0f);
+    glVertex3f(0.3f, 0.9f, 0.0f);
+    glVertex3f(0.0f, 0.7f, 0.0f);
+
+    glEnd();
+
+    glPopMatrix();
+
+    // Support connecting heart to pedestal
+    glPushMatrix();
+
+    glTranslatef(0.0f, -0.35f, 0.0f);
+    glScalef(0.08f, 0.5f, 0.08f);
+
+    glutSolidCube(1.0);
+
+    glPopMatrix();
+
+    // Pedestal
+    glPushMatrix();
+
+    glTranslatef(0.0f, -0.7f, 0.0f);
+    glScalef(1.2f, 0.2f, 0.5f);
+
+    glutSolidCube(1.0);
+
+    glPopMatrix();
+
+    glPopMatrix();
 }
 
 void display()
